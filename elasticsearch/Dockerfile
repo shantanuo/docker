@@ -19,9 +19,9 @@ RUN wget -nv https://download.elastic.co/kibana/kibana/kibana-${KIBANA_VERSION}-
     rm -f kibana-${KIBANA_VERSION}-linux-x64.tar.gz && \
     mv kibana-${KIBANA_VERSION}-linux-x64 kibana
     
-RUN wget https://dumps.wikimedia.org/other/cirrussearch/20160502/emlwiki-20160502-cirrussearch-content.json.gz
+# RUN wget https://dumps.wikimedia.org/other/cirrussearch/20160502/emlwiki-20160502-cirrussearch-content.json.gz
 
-RUN gunzip emlwiki-20160502-cirrussearch-content.json.gz
+# RUN gunzip emlwiki-20160502-cirrussearch-content.json.gz
 
 CMD elasticsearch/bin/elasticsearch -Des.logger.level=OFF -Des.network.bind_host=0.0.0.0 & kibana/bin/kibana -q
 
