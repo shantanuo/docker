@@ -23,6 +23,8 @@ RUN wget -nv https://download.elastic.co/kibana/kibana/kibana-${KIBANA_VERSION}-
 
 # RUN gunzip emlwiki-20160502-cirrussearch-content.json.gz
 
+COPY elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
+
 CMD elasticsearch/bin/elasticsearch -Des.logger.level=OFF -Des.network.bind_host=0.0.0.0 & kibana/bin/kibana -q
 
 EXPOSE 9200 5601
