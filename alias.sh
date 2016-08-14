@@ -16,6 +16,8 @@ echo "alias installkibana='docker run -d -p 5601:5601 --link myelastic:elasticse
 
 echo "alias installlogstash='docker run -d -v "/tmp/logstash.conf":/usr/local/logstash/config/logstash.conf -v /tmp/:/tmp/ logstash -f /usr/local/logstash/config/logstash.conf'" >> ~/.bashrc
 
+echo "alias docker run -p 7778:7778 -t continuumio/miniconda conda install -c conda-forge -y geopandas gdal tqdm jupyter && jupyter notebook --ip=* --port=7778 "
+
 source ~/.bashrc
 
 #curl -sf -L https://raw.githubusercontent.com/shantanuo/docker/master/alias.sh | sh
