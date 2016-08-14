@@ -1,3 +1,13 @@
+mkdir -p /my/custom
+
+cat /my/custom/config-file.cnf <<"here_doc"
+[mysqld]
+myisam_sort_buffer_size = 34G
+tmp_table_size=34G
+max_heap_table_size=34G
+key_buffer_size=34G
+"here_doc"
+
 echo "alias installmysql='docker run -d -p 3306:3306  -e MYSQL_ALLOW_EMPTY_PASSWORD=yes  -v /my/custom:/etc/mysql/conf.d  -v /storage/test-mysql/datadir:/var/lib/mysql mysql:5.5'" >> ~/.bashrc
 
 echo "alias installelastic='docker run --name myelastic -v /tmp/:/usr/share/elasticsearch/config  -p 9200:9200 -p 9300:9300  -e ES_HEAP_SIZE=1g -d elasticsearch'" >> ~/.bashrc
