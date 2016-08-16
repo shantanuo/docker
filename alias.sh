@@ -1,6 +1,6 @@
 mkdir -p /my/custom
 
-cat /my/custom/config-file.cnf <<"here_doc"
+cat > /my/custom/config-file.cnf <<"here_doc"
 [mysqld]
 myisam_sort_buffer_size = 34G
 tmp_table_size=34G
