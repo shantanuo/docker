@@ -156,7 +156,7 @@ output:
     # hosts: ["localhost:9200"]
     # hosts: ["search-es-demo-jythk2or3v3sesrgt6dgn5u7qm.us-east-1.es.amazonaws.com:443"]
     #hosts: ["ec2-54-165-142-180.compute-1.amazonaws.com:9200"]
-    hosts: ["52.86.68.170:9200"]
+    hosts: ["34.192.223.193:9200"]
     #protocol: "https"
     #username: "admin"
     #password: "s3cr3t"
