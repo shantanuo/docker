@@ -16,7 +16,7 @@ ADD mongodb.repo /etc/yum.repos.d/mongodb.repo
 RUN yum install -y mongodb-org
 RUN mkdir /data
 RUN mkdir /data/db
-RUN pecl install mongo
+RUN pecl install mongodb
 RUN echo extension=mongo.so >> /etc/php.d/mongo.ini
 
 RUN git clone --depth=1 git://github.com/phalcon/cphalcon.git /root/phalcon
