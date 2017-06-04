@@ -5,7 +5,7 @@ LABEL maintainer "nshou <nshou@coronocoya.net>"
 ENV ES_VERSION=5.4.0 \
     KIBANA_VERSION=5.4.0
 
-RUN apk add --quiet --no-progress --no-cache nodejs wget \
+RUN apk add --quiet --no-progress --no-cache nodejs wget curl \
  && adduser -D elasticsearch
 
 USER elasticsearch
