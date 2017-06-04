@@ -4,7 +4,7 @@ MAINTAINER ishiidaichi
 
 RUN yum -y update
 
-RUN yum -y install httpd gcc make git mysql-server mysql mysql-client python-setuptools
+RUN yum -y install httpd gcc make git mysql-server mysql mysql-client python-setuptools openssl-devel
 ADD default.conf /etc/httpd/conf.d/virtualhost-default.conf
 
 RUN rpm -Uvh http://ftp.iij.ad.jp/pub/linux/fedora/epel/6/x86_64/epel-release-6-8.noarch.rpm
