@@ -1,6 +1,6 @@
 Usage
 
-docker run -d -p 9200:9200 -p 5601:5601 nshou/elasticsearch-kibana
+docker run -d -p 9201:9200 -p 5602:5601 shantanuo/mykibana
 
 Tags
 
