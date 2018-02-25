@@ -127,7 +127,7 @@ output.elasticsearch:
   template.name: "packetbeat"
 
   # Path to template file
-  template.path: "${path.config}/packetbeat.template.json"
+  # template.path: "${path.config}/packetbeat.template.json"
 
   # Overwrite existing template
   template.overwrite: true
@@ -143,7 +143,7 @@ output.elasticsearch:
   template.versions.6x.enabled: true
 
   # Path to the Elasticsearch 6.x version of the template file.
-  template.versions.6x.path: "${path.config}/packetbeat.template-es6x.json"
+  template.versions.6x.path: "/usr/share/packetbeat/packetbeat.template-es6x.json"
 
 #----------------------------- Logstash output --------------------------------
 #output.logstash:
