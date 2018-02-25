@@ -1792,6 +1792,7 @@
             of rows returned.
 
         - name: query
+          type: text        
           description: >
             The row mysql query as read from the transaction's request.
 
