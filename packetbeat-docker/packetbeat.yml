@@ -13,6 +13,8 @@
 # "any" keyword to sniff on all connected interfaces.
 packetbeat.interfaces.device: any
 
+# enable dashboard
+setup.dashboards.enabled: true
 #================================== Flows =====================================
 
 # Set `enabled: false` or comment out all options to disable flows reporting.
