@@ -12,5 +12,6 @@ RUN tar zxvf ${FILENAME}
 
 WORKDIR packetbeat-${VERSION}
 ADD packetbeat.yml packetbeat.yml
+ADD packetbeat.template-es6x.json packetbeat.template-es6x.json 
 
 CMD ["./packetbeat", "-e", "-c=packetbeat.yml"]
