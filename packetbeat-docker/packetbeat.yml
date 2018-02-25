@@ -15,6 +15,7 @@ packetbeat.interfaces.device: any
 
 # enable dashboard
 setup.dashboards.enabled: true
+setup.dashboards.url: '${KIBANA}' 
 #================================== Flows =====================================
 
 # Set `enabled: false` or comment out all options to disable flows reporting.
