@@ -115,12 +115,11 @@ packetbeat.protocols.nfs:
 #-------------------------- Elasticsearch output ------------------------------
 output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["https://944fe807b7525eaf163f502e08a412c5.us-east-1.aws.found.io:9243"]
+  hosts: ['${HOST}']
   # Optional protocol and basic auth credentials.
   protocol: "https"
   username: "elastic"
-  password: "rzmYYJUdHVaglRejr8XqjIX7"
-
+  password: '${PASS}'
  # Set to false to disable template loading.
   template.enabled: true
 
