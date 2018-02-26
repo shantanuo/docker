@@ -1,7 +1,8 @@
 FROM ubuntu
 
 # Install wget (used to pull down beta release of mysqlbeat)
-RUN apt-get update && apt-get install -y git golang golang-glide
+RUN apt-get update 
+RUN apt-get install -y git golang golang-glide
 
 RUN mkdir -p ~/.go/src/github.com/adibendahan && \
     export GOPATH=/root/.go && export GOROOT=/usr/lib/go-1.7/ && \
