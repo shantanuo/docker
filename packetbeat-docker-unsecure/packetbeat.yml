@@ -121,9 +121,9 @@ output.elasticsearch:
   # Array of hosts to connect to.
   hosts: ['${HOST}']
   # Optional protocol and basic auth credentials.
-  protocol: "https"
-  username: "elastic"
-  password: '${PASS}'
+  # protocol: "https"
+  # username: "elastic"
+  # password: '${PASS}'
  # Set to false to disable template loading.
   template.enabled: true
 
