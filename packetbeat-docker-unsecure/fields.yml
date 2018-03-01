@@ -1795,7 +1795,7 @@
           type: text        
           description: The row mysql query as read from the transaction's request.
           fields:
-            - name: myraw
+            - name: raw
               type: keyword
               description: raw query as keyword
 
