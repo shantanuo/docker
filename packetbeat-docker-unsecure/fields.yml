@@ -1793,8 +1793,11 @@
 
         - name: query
           type: text        
-          description: >
-            The row mysql query as read from the transaction's request.
+          description: The row mysql query as read from the transaction's request.
+          fields:
+            - name: myraw
+              type: keyword
+              description: raw query as keyword
 
         - name: error_code
           type: long
