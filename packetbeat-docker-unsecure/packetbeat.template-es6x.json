@@ -206,9 +206,15 @@
                     }
                   }
                 },
-                "query": {
-                  "type": "text"
-                }
+    "query": {
+      "type": "text",
+      "fields": {
+        "raw": {
+          "type": "keyword",
+          "ignore_above": 1024
+        }
+      }
+    }
               }
             },
             "response": {
@@ -1063,9 +1069,15 @@
             "numberToSkip": {
               "type": "long"
             },
-            "query": {
-              "type": "text"
-            },
+    "query": {
+      "type": "text",
+      "fields": {
+        "raw": {
+          "type": "keyword",
+          "ignore_above": 1024
+        }
+      }
+    },
             "returnFieldsSelector": {
               "ignore_above": 1024,
               "type": "keyword"
@@ -1111,9 +1123,15 @@
               "ignore_above": 1024,
               "type": "keyword"
             },
-            "query": {
-              "type": "text"
-            }
+    "query": {
+      "type": "text",
+      "fields": {
+        "raw": {
+          "type": "keyword",
+          "ignore_above": 1024
+        }
+      }
+    }
           }
         },
         "nfs": {
@@ -1178,9 +1196,15 @@
               "ignore_above": 1024,
               "type": "keyword"
             },
-            "query": {
-              "type": "text"
-            }
+    "query": {
+      "type": "text",
+      "fields": {
+        "raw": {
+          "type": "keyword",
+          "ignore_above": 1024
+        }
+      }
+    }
           }
         },
         "port": {
