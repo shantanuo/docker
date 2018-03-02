@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:bionic
 
 # Install wget (used to pull down beta release of mysqlbeat)
 RUN apt-get update 
