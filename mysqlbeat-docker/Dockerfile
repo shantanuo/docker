@@ -1,6 +1,7 @@
-FROM ubuntu:bionic
+FROM ubuntu:17.04
 
 # Install wget (used to pull down beta release of mysqlbeat)
+RUN sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
 RUN apt-get update 
 RUN apt-get install -y git golang golang-glide
 
