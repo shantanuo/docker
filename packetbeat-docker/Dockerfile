@@ -4,9 +4,9 @@ COPY packetbeat.template-es6x.json /usr/share/packetbeat/packetbeat.template-es6
 
 USER root
 COPY fields.yml /usr/share/packetbeat/fields.yml
-COPY packetbeat.reference.yml /usr/share/packetbeat/packetbeat.reference.yml
+
 RUN chown packetbeat /usr/share/packetbeat/packetbeat.yml
 RUN chown packetbeat /usr/share/packetbeat/packetbeat.template-es6x.json
 RUN chown packetbeat /usr/share/packetbeat/fields.yml
-RUN chown packetbeat /usr/share/packetbeat/packetbeat.reference.yml
+
 USER packetbeat
