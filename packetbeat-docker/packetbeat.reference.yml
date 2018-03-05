@@ -266,11 +266,11 @@ packetbeat.protocols:
 
   # If this option is enabled, the raw message of the request (`request` field)
   # is sent to Elasticsearch. The default is false.
-  send_request: false
+  send_request: true
 
   # If this option is enabled, the raw message of the response (`response`
   # field) is sent to Elasticsearch. The default is false.
-  send_response: false
+  send_response: true
 
   # Transaction timeout. Expired transactions will no longer be correlated to
   # incoming responses, but sent to Elasticsearch immediately.
