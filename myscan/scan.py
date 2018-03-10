@@ -14,7 +14,7 @@ from PIL import Image, ImageEnhance, ImageFilter
 path = sys.argv[1]
 
 img = Image.open(path)
-img = img.convert('RGBA')
+img = img.convert('RGB')
 pix = img.load()
 
 for y in range(img.size[1]):
