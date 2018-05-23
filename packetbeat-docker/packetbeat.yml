@@ -70,7 +70,6 @@ packetbeat.protocols.mysql:
   # Configure the ports where to listen for MySQL traffic. You can disable
   # the MySQL protocol by commenting out the list of ports.
   ports: [3306]
-  send_request: true
   send_response: true
 
 packetbeat.protocols.pgsql:
