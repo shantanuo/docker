@@ -71,6 +71,7 @@ packetbeat.protocols.mysql:
   # the MySQL protocol by commenting out the list of ports.
   ports: [3306]
   send_response: true
+  max_row_length: 4000
 
 packetbeat.protocols.pgsql:
   # Configure the ports where to listen for Pgsql traffic. You can disable
