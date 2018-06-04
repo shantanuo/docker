@@ -9,8 +9,8 @@ client = boto3.client(
 )
 
 client.publish(
-    PhoneNumber="+919819838466",
-    Message="Hello World aws again from docker!",
+    PhoneNumber=os.environ['mnumber'],
+    Message=os.environ['mmessage'],
    MessageAttributes={
     'AWS.SNS.SMS.SMSType': {
       'DataType': 'String',
