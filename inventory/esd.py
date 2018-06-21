@@ -1,9 +1,3 @@
-import pip
-pip.main(['install', 'requests'])
-pip.main(['install', 'pandas'])
-pip.main(['install', 'boto3'])
-pip.main(['install', 'openpyxl'])
-
 import requests
 from io import StringIO
 import pandas as pd
