@@ -2,6 +2,7 @@ import pandas as pd
 from datetime import datetime
 import boto3
 import fire
+import os
 
 MY_ACCESS_KEY_ID = os.environ.get('MY_ACCESS_KEY_ID') 
 MY_SECRET_ACCESS_KEY = os.environ.get('MY_SECRET_ACCESS_KEY')
