@@ -35,4 +35,6 @@ RUN apt-get -qqy update && apt-get install -qqy \
     gcloud config set metrics/environment github_docker_image && \
     gcloud --version && \
     docker --version && kubectl version --client
+    
+ADD translate.py /usr/bin/    
 VOLUME ["/root/.config"]
