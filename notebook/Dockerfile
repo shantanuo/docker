@@ -2,6 +2,7 @@ FROM continuumio/miniconda3
 RUN /opt/conda/bin/conda install jupyter -y --quiet
 EXPOSE 8888
 RUN cd /tmp/
+RUN apt-get update
 RUN apt-get install --yes python-pydot
 RUN conda install --yes -c conda-forge fastparquet
 RUN pip install -U numpy seaborn sklearn
