@@ -4,6 +4,6 @@ EXPOSE 8888
 RUN cd /tmp/
 RUN apt-get update
 RUN apt-get install --yes python-pydot build-essential
-RUN conda install --yes -c conda-forge fastparquet pydotplus spacy
+RUN conda install --yes -c conda-forge fastparquet pydotplus "spacy>=2.0.0,<2.1.0" 
 RUN pip install -U numpy seaborn sklearn
 CMD ["/opt/conda/bin/jupyter", "notebook", "--NotebookApp.token='india'", "--notebook-dir=/tmp/", "--ip='0.0.0.0'", "--port=8888", "--no-browser", "--allow-root"]
