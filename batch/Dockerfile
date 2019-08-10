@@ -3,7 +3,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Define Python required libraries in requirements.txt
 # Copy requirements file into the Docker image
-ADD requirements.txt /tmp/
+ADD . /tmp/
 WORKDIR /tmp
 
 # Install required software via apt and pip
