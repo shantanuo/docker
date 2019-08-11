@@ -1,12 +1,5 @@
 FROM ubuntu
 
-# Define Python required libraries in requirements.txt
-# Copy requirements file into the Docker image
-ADD . /tmp/
-WORKDIR /tmp
-
-ARG DEBIAN_FRONTEND=noninteractive
-
 # Install required software via apt and pip
 RUN apt-get -y update && \
 	apt-get install -y \
