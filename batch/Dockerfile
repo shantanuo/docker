@@ -1,10 +1,11 @@
 FROM ubuntu
-ARG DEBIAN_FRONTEND=noninteractive
 
 # Define Python required libraries in requirements.txt
 # Copy requirements file into the Docker image
 ADD . /tmp/
 WORKDIR /tmp
+
+ARG DEBIAN_FRONTEND=noninteractive
 
 # Install required software via apt and pip
 RUN apt-get -y update && \
@@ -17,8 +18,8 @@ RUN apt-get -y update && \
  && apt-get -y update \
  && apt-get install -y \
  	gdal-bin \
- && pip install --requirement /tmp/requirements.txt
-
+ && pip install boto3
+ 
 # Copy Build Thumbnail script to Docker image and add execute permissions
 COPY build-thumbnails.py build-thumbnails.py
 
