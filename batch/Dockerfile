@@ -1,4 +1,5 @@
 FROM ubuntu
+ARG DEBIAN_FRONTEND=noninteractive
 
 # Install required software via apt and pip
 RUN apt-get -y update && \
