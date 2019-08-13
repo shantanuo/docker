@@ -15,7 +15,7 @@ RUN apt-get -y update && \
  && pip install boto3
  
 # Copy Build Thumbnail script to Docker image and add execute permissions
-COPY build-thumbnails.py build-thumbnails.py
+ADD build-thumbnails.py /tmp/build-thumbnails.py
 
 RUN chmod +x build-thumbnails.py
   
