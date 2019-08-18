@@ -13,3 +13,4 @@ for post in feed.entries:
     for link in soup.findAll("a", attrs={"href": re.compile("^https://github.com")}):
         PARAMS = {'title':link.get("href")} 
         r = requests.get(url = api_url, params = PARAMS)
+        print (r.text)
