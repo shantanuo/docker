@@ -1,18 +1,34 @@
+import argparse
 import feedparser
 import re
 from bs4 import BeautifulSoup
-import requests 
+import requests
+import boto3
 
-api_url = "https://wgykjmyt0e.execute-api.us-east-1.amazonaws.com/stage"
+parser = argparse.ArgumentParser()
+parser.add_argument("access")
+parser.add_argument("secret")
+parser.add_argument("region")
+args = parser.parse_args()
+
+myaccess = args.access
+mysecret = args.secret
+myregion = args.region
 
 url = "https://towardsdatascience.com/feed"
 feed = feedparser.parse(url)
 
+dynamodb = boto3.resource(
+    "dynamodb",
+    aws_access_key_id=myaccess,
+    aws_secret_access_key=mysecret,
+    region_name=myregion,
+)
+
+table = dynamodb.Table("Movies")
+
 for post in feed.entries:
     soup = BeautifulSoup(post.description)
-    for link in soup.findAll('a'):
-        if 'http' in link.get('href'):
-            PARAMS = {'title':link.get('href')} 
-            print (link.get('href'))
-            r = requests.get(url = api_url, params = PARAMS)
-            print (r.text)
+    for link in soup.findAll("a"):
+        if "http" in link.get("href"):
+            response = table.put_item(Item={"title": link.get("href")})
