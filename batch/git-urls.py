@@ -4,9 +4,9 @@ from bs4 import BeautifulSoup
 import boto3
 
 parser = argparse.ArgumentParser()
-parser.add_argument("access")
-parser.add_argument("secret")
-parser.add_argument("region")
+parser.add_argument("--access", required=True)
+parser.add_argument("--secret", required=True)
+parser.add_argument("--region", required=True)
 args = parser.parse_args()
 
 myaccess = args.access
@@ -27,4 +27,5 @@ for post in feed.entries:
 
 """
 python test.py 'access_key_xxx' 'secret_key_xxx'  'us-east-1'
+python test1.py --access abcd --secret ddd --region aaa
 """
