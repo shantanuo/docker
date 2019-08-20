@@ -1,17 +1,11 @@
-import argparse
 import feedparser
 from bs4 import BeautifulSoup
 import boto3
+import os
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--access", required=True)
-parser.add_argument("--secret", required=True)
-parser.add_argument("--region", required=True)
-args = parser.parse_args()
-
-myaccess = args.access
-mysecret = args.secret
-myregion = args.region
+myaccess = os.environ['access']
+mysecret = os.environ['secret']
+myregion = os.environ['region']
 
 url = "https://towardsdatascience.com/feed"
 feed = feedparser.parse(url)
