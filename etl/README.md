@@ -1,8 +1,8 @@
-# Download the sample data from:
+- Download the sample data from:
 https://www.kaggle.com/c/kkbox-churn-prediction-challenge/data
 
-# Make sure to change access, secret key. Create or empty S3 bucket for e.g. todel164
-# Make sure transactions.csv file is in folder /tmp/predict-customer-churn/data/
+- Make sure to change access, secret key. Create or empty S3 bucket for e.g. todel164
+- Make sure transactions.csv file is in folder /tmp/predict-customer-churn/data/
 
 docker run -v /tmp/predict-customer-churn/data/:/tmp/ \
 -e AWS_ACCESS_KEY_ID='xxx' \
