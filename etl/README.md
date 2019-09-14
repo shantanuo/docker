@@ -27,4 +27,5 @@ TBLPROPERTIES ('has_encrypted_data'='false');
 
 - If the csv file is too large, split it.
 - make sure that the new files have the same header as original csv
+
 split -b 10G user_logs.csv
