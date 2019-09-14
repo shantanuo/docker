@@ -32,14 +32,32 @@ TBLPROPERTIES ('has_encrypted_data'='false');
 
 > split -C 1G user_logs.csv
 
-The following shell script can be used to add the headers to each part:
+The following shell script can be used to add the headers to each part and export parquet files to S3
 
 ```
 #!/bin/sh
-for file in `ls xa*`
+for file in `ls x*`
 do
+if [ "$file" == "xaa" ]
+then
+docker run -v /tmp/predict-customer-churn/data/:/tmp/ \
+-e AWS_ACCESS_KEY_ID='xxx' \
+-e AWS_SECRET_ACCESS_KEY='xxx' \
+-e s3_path='s3://todel164' \
+-e csv_path="/tmp/xaa" \
+shantanuo/etl python /home/process.py
+else
 head -1 user_logs.csv > "$file"_temp
 cat $file >> "$file"_temp
 mv "$file"_temp $file
+
+docker run -v /tmp/predict-customer-churn/data/:/tmp/ \
+-e AWS_ACCESS_KEY_ID='xxx' \
+-e AWS_SECRET_ACCESS_KEY='xxx' \
+-e s3_path='s3://todel164' \
+-e csv_path="/tmp/$file" \
+shantanuo/etl python /home/process.py
+
+fi
 done
 ```
