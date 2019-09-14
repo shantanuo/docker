@@ -1,4 +1,5 @@
 - Download the sample data from:
+
 https://www.kaggle.com/c/kkbox-churn-prediction-challenge/data
 
 - Make sure to change access, secret key. Create or empty S3 bucket for e.g. todel164
@@ -11,8 +12,8 @@ docker run -v /tmp/predict-customer-churn/data/:/tmp/ \
 -e csv_path='/tmp/transactions.csv' \
 shantanuo/etl python /home/process.py
 
-# Create Athena table like this... 
-# make sure that the athena column name match with the csv file's first row
+- Create Athena table like this... 
+- make sure that the athena column name match with the csv file's first row
 
 CREATE EXTERNAL TABLE IF NOT EXISTS sampledb.todel14a (
 `msno` string,  
@@ -24,6 +25,6 @@ WITH SERDEPROPERTIES (
 ) LOCATION 's3://todel164/'
 TBLPROPERTIES ('has_encrypted_data'='false');
 
-# If the csv file is too large, split it.
-# make sure that the new files have the same header as original csv
+- If the csv file is too large, split it.
+- make sure that the new files have the same header as original csv
 split -b 10G user_logs.csv
