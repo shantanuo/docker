@@ -28,4 +28,14 @@ TBLPROPERTIES ('has_encrypted_data'='false');
 - If the csv file is too large, split it.
 - make sure that the new files have the same header as original csv
 
-split -b 10G user_logs.csv
+split -C 1G user_logs.csv
+
+The following shell script can be used to add the headers to each part:
+
+#!/bin/sh
+for file in `ls xa*`
+do
+head -1 user_logs.csv > "$file"_temp
+cat $file >> "$file"_temp
+mv "$file"_temp $file
+done
