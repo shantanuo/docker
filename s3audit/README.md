@@ -13,6 +13,7 @@ docker build -t shantanuo/pm .
 docker run --disable-content-trust  -it  shantanuo/pm sh
 
 / # ./aws-vault add home
+
 Enter Access Key ID:
 
 / # ./aws-vault exec home -- s3audit
