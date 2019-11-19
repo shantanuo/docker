@@ -122,6 +122,7 @@ packetbeat.protocols.nfs:
 output.elasticsearch:
   # Array of hosts to connect to.
   hosts: ['${HOST}']
+  pipeline: geoip-info
   # Optional protocol and basic auth credentials.
   # protocol: "https"
   # username: "elastic"
