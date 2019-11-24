@@ -15,6 +15,7 @@ rm -r /root/.cache
 WORKDIR /home/elasticsearch
 RUN pip install requests  elasticsearch==5.5.3
 RUN git clone  https://github.com/o19s/elasticsearch-learning-to-rank.git
+RUN chmod -R 777 /home/elasticsearch/elasticsearch-learning-to-rank
 
 USER elasticsearch
 
