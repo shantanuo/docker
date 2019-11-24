@@ -36,6 +36,8 @@ RUN wget -q -O - https://artifacts.elastic.co/downloads/elasticsearch/elasticsea
  && ln -s $(which node) kibana/node/bin/node \
  && ln -s $(which npm) kibana/node/bin/npm
 
+RUN sh /home/elasticsearch/elasticsearch/bin/elasticsearch-plugin install -b http://es-learn-to-rank.labs.o19s.com/ltr-1.0.1-es6.2.1.zip
+
 CMD sh elasticsearch/bin/elasticsearch -E http.host=0.0.0.0 --quiet & kibana/bin/kibana --host 0.0.0.0 -Q
 
 EXPOSE 9200 5601
