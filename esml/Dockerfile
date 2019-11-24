@@ -1,7 +1,4 @@
 FROM openjdk:jre-alpine
-
-LABEL maintainer "nshou <nshou@coronocoya.net>"
-
 ARG ek_version=6.2.1
 
 RUN apk add --quiet --no-progress --no-cache nodejs wget git curl\
@@ -15,10 +12,8 @@ if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
 if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
 rm -r /root/.cache
 
-RUN pip install requests  elasticsearch==5.5.3
-
 WORKDIR /home/elasticsearch
-
+RUN pip install requests  elasticsearch==5.5.3
 RUN git clone  https://github.com/o19s/elasticsearch-learning-to-rank.git
 
 USER elasticsearch
