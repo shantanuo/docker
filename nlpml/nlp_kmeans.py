@@ -14,14 +14,15 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.cluster import KMeans
 
-user = os.environ["user"] or "root"
-passwd = os.environ["passwd"]
-server = os.environ["server"]
-port = os.environ["port"] or "5439"
-dbname = os.environ["dbname"] or "vdb"
-senderid = os.environ["senderid"]
-access = os.environ["access"] 
-secret = os.environ["secret"]
+user=os.getenv('user') or 'root'
+passwd=os.getenv('passwd')
+server=os.getenv('server')
+port=os.getenv('port') or '5439'
+dbname=os.getenv('dbname') or 'vdb'
+senderid=os.getenv('senderid')
+access=os.getenv('access')
+secret=os.getenv('secret')
+
 
 pg_engine = create_engine(
     "postgresql+psycopg2://%s:%s@%s:%i/%s" % (user, passwd, server, int(port), dbname)
@@ -30,7 +31,7 @@ pg_engine = create_engine(
 my_query = (
     "select new_message from temple_senderid_merge_u3 where senderid = '"
     + senderid
-    + "' limit 1000000 "
+    + "' limit 1000 "
 )
 df = pd.read_sql(my_query, con=pg_engine)
 df = df.dropna()
