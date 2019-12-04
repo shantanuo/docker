@@ -31,7 +31,7 @@ pg_engine = create_engine(
 my_query = (
     "select new_message from temple_senderid_merge_u3 where senderid = '"
     + senderid
-    + "' limit 1000 "
+    + "' limit 1000000 "
 )
 df = pd.read_sql(my_query, con=pg_engine)
 df = df.dropna()
