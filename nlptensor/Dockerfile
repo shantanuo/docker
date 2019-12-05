@@ -5,5 +5,5 @@ RUN cd /tmp/
 RUN apt-get update
 RUN apt-get install --yes python-pydot build-essential
 RUN conda install --yes -c conda-forge fastparquet pydotplus
-RUN pip install -U seaborn sklearn spacy pillow bs4 nb_black pyjanitor psycopg2-binary sqlalchemy boto3 networkx tensorflow=1.15 tensorflow_hub
+RUN pip install -U seaborn sklearn spacy pillow bs4 nb_black pyjanitor psycopg2-binary sqlalchemy boto3 networkx tensorflow==1.15 tensorflow_hub
 COPY nlp_kmeans.py /tmp/nlp_tensorflow.py
