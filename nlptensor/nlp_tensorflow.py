@@ -23,6 +23,7 @@ senderid=os.getenv('senderid')
 access=os.getenv('access')
 secret=os.getenv('secret')
 bucket=os.getenv('bucket') or 'athenadata162'
+mylimit=os.getenv('mylimit') or '0.8'
 
 pg_engine = create_engine(
     "postgresql+psycopg2://%s:%s@%s:%i/%s" % (user, passwd, server, int(port), dbname)
@@ -73,7 +74,8 @@ def clusterize(mysenderid):
     ndf = pd.DataFrame(ml_df_collect[0])
     np.fill_diagonal(ndf.values, 0)
     ndf = pd.DataFrame(ndf.values)
-    tups = list(ndf[ndf > 0.8].stack().index)
+    tups = list(ndf[ndf > float(mylimit)].stack().index)
+        
 
     x = uniqueGroup(tups)
     mylist = list()
