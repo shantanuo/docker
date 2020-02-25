@@ -6,6 +6,10 @@ import random, re
 import string
 import os
 
+nltk.download("stopwords")
+nltk.download("punkt")
+nltk.download("wordnet")
+
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -38,11 +42,6 @@ dictionary_path = pkg_resources.resource_filename(
 )
 
 sym_spell.load_dictionary(dictionary_path, term_index=0, count_index=1)
-
-# !pip install nltk keras tensorflow
-# nltk.download("stopwords")
-# nltk.download("punkt")
-# nltk.download("wordnet")
 
 df = pd.read_csv("K8 Reviews v0.2.csv")
 
