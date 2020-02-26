@@ -6,17 +6,15 @@ import random, re
 import string
 import os
 
-
-
 import nltk
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
-from nltk.stem.porter import PorterStemmer
-
 nltk.download("stopwords")
 nltk.download("punkt")
 nltk.download("wordnet")
 nltk.download('averaged_perceptron_tagger')
+
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from nltk.stem.porter import PorterStemmer
 
 stop = set(stopwords.words("english"))
 
@@ -33,7 +31,7 @@ from boto.s3.connection import OrdinaryCallingFormat
 from spello.model import SpellCorrectionModel
 
 sp = SpellCorrectionModel(language="en")
-sp.load("en_large.pkl")
+sp.load("/tmp/en_large.pkl")
 
 import pkg_resources
 from symspellpy import SymSpell, Verbosity
