@@ -64,7 +64,7 @@ stemmer = PorterStemmer()
 lemm = WordNetLemmatizer()
 
 def tokenize(text):
-    text=re.sub(r'['+chars+']', ' ', text)
+    text = re.sub(r'['+chars+']', ' ', text)
     text = sym_spell.word_segmentation(text)[0]
     try:
         corrected = sp.spell_correct(text)["spell_corrected_text"]
