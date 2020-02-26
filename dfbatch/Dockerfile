@@ -11,5 +11,6 @@ RUN wget https://raw.githubusercontent.com/hitz02/Sentiment_Analysis_Phone_Revie
 RUN wget https://www.dropbox.com/s/v9uuv635lv1idjf/en_large.pkl.zip
 RUN unzip -c en_large.pkl.zip > /tmp/en_large.pkl
 
-COPY K8%20Reviews%20v0.2.csv /tmp/K8%20Reviews%20v0.2.csv
+RUN cp K8\ Reviews\ v0.2.csv /tmp/K8\ Reviews\ v0.2.csv
+
 COPY df_process.py /tmp/df_process.py
