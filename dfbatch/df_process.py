@@ -44,6 +44,8 @@ dictionary_path = pkg_resources.resource_filename(
 
 sym_spell.load_dictionary(dictionary_path, term_index=0, count_index=1)
 
+chars = re.escape(string.punctuation)
+
 df = pd.read_csv("K8 Reviews v0.2.csv")
 
 slices = os.getenv("slices") or 10
@@ -62,7 +64,7 @@ stemmer = PorterStemmer()
 lemm = WordNetLemmatizer()
 
 def tokenize(text):
-    text = re.sub(r"\.(?=\S)", ". ", text)
+    text=re.sub(r'['+chars+']', ' ', text)
     text = sym_spell.word_segmentation(text)[0]
     try:
         corrected = sp.spell_correct(text)["spell_corrected_text"]
