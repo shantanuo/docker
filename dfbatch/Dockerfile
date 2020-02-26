@@ -9,8 +9,8 @@ RUN pip install -U numpy seaborn sklearn spacy pillow bs4 nb_black pyjanitor psy
 RUN pip install -U nltk boto spello symspellpy
 RUN wget https://raw.githubusercontent.com/hitz02/Sentiment_Analysis_Phone_Review/master/K8%20Reviews%20v0.2.csv
 RUN wget https://www.dropbox.com/s/v9uuv635lv1idjf/en_large.pkl.zip
-RUN unzip -c en_large.pkl.zip > /tmp/en_large.pkl
+RUN unzip en_large.pkl.zip
+RUN cp en_large.pkl /tmp/en_large.pkl
 
 RUN cp K8\ Reviews\ v0.2.csv /tmp/K8\ Reviews\ v0.2.csv
-
 COPY df_process.py /tmp/df_process.py
