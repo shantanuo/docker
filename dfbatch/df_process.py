@@ -6,14 +6,17 @@ import random, re
 import string
 import os
 
-nltk.download("stopwords")
-nltk.download("punkt")
-nltk.download("wordnet")
+
 
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.stem.porter import PorterStemmer
+
+nltk.download("stopwords")
+nltk.download("punkt")
+nltk.download("wordnet")
+nltk.download('averaged_perceptron_tagger')
 
 stop = set(stopwords.words("english"))
 
