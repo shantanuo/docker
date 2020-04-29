@@ -12,7 +12,7 @@ RUN unzip master.zip
 ADD . /workdir
 RUN \
   ( \
-    cd /workdir/pgbadger-master && \
+    cd pgbadger-master && \
     perl Makefile.PL && \
     make install \
   ) && \
