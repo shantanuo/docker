@@ -9,7 +9,6 @@ RUN apt-get -y update && \
     python3-pip \
     software-properties-common
 
-
 RUN add-apt-repository ppa:ubuntugis/ubuntugis-unstable && apt-get -y update
 
 RUN apt-get install -y gdal-bin
