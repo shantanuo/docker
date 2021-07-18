@@ -6,5 +6,3 @@ RUN unzip awscliv2.zip
 RUN ./aws/install
 
 ADD update_feed.sh /tmp/
-
-ENTRYPOINT ["/usr/local/bin/aws"]
