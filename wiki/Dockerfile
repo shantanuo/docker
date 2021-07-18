@@ -6,3 +6,5 @@ RUN unzip awscliv2.zip
 RUN ./aws/install
 
 ADD update_feed.sh /tmp/
+
+aws s3 ls
