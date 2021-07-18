@@ -5,4 +5,4 @@ head -9 /tmp/out1.txt > /tmp/updated.txt
 PERL5OPT=-CA xpath -e "/feed/entry[author/name!='Aditya tamhankar' and author/name!='Dharmadhyaksha' and author/name!='नरेश सावे' and author/name!='अभय नातू']" /tmp/out1.txt >> /tmp/updated.txt
 tail -1 /tmp/out1.txt >> /tmp/updated.txt
 
-aws s3 cp /tmp/updated.txt s3://hunspell/wiki/ --acl public-read
+aws s3 cp /tmp/updated.txt s3://hunspell/wiki/
