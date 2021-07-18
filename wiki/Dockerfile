@@ -9,4 +9,4 @@ RUN wget 'https://mr.wikipedia.org/w/api.php?hidebots=1&hidecategorization=1&hid
  
 RUN PERL5OPT=-CA xpath -e "/feed/entry[author/name!='Aditya tamhankar' and author/name!='Dharmadhyaksha' and author/name!='नरेश सावे' and author/name!='अभय नातू']" out1.txt > updated.txt
 
-RUN aws s3 cp out1.txt s3://hunspell/wiki/ --acl public-read
+ENTRYPOINT ["/usr/local/bin/aws"]
