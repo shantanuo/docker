@@ -11,3 +11,5 @@ RUN PERL5OPT=-CA xpath -e "/feed/entry[author/name!='Aditya tamhankar' and autho
 
 AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
 AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+
+aws s3 cp /tmp/out1.txt s3://abc/wiki/
