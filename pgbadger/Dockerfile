@@ -10,14 +10,9 @@ RUN wget --no-check-certificate -O master.zip https://github.com/darold/pgbadger
 RUN unzip master.zip
 
 ADD . /workdir
-RUN \
-  ( \
-    cd pgbadger-master && \
-    perl Makefile.PL && \
-    make install \
-  ) && \
-  apk del --purge .build && \
-  rm -rf /workdir/
+RUN cd pgbadger-master && perl Makefile.PL && make install 
+RUN apk del --purge .build
+RUN rm -rf /workdir/
 
 WORKDIR /workdir
 ENTRYPOINT ["/usr/local/bin/pgbadger"]
