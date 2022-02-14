@@ -1,6 +1,6 @@
 FROM python:2
 RUN pip install cherrypy mysqlclient
-RUN git clone https://github.com/teamtachyon/Quillpad-Server.git
+RUN git clone https://github.com/CognirelTech/Quillpad-Server.git
 WORKDIR Quillpad-Server/
 RUN mkdir logs
 
